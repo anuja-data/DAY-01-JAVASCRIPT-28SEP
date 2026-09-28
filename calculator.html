@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+    <title>Calculator</title>
+
+    <style>
+        button {
+            width: 50px;
+            height: 40px;
+            margin: 3px;
+            font-size: 18px;
+        }
+
+        #display {
+            width: 215px;
+            height: 35px;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Calculator</h2>
+
+    <input type="text" id="display" readonly>
+
+    <br>
+
+    <button onclick="calculate('7')">7</button>
+    <button onclick="calculate('8')">8</button>
+    <button onclick="calculate('9')">9</button>
+    <button onclick="calculate('/')">÷</button>
+
+    <br>
+
+    <button onclick="calculate('4')">4</button>
+    <button onclick="calculate('5')">5</button>
+    <button onclick="calculate('6')">6</button>
+    <button onclick="calculate('*')">*</button>
+
+    <br>
+
+    <button onclick="calculate('1')">1</button>
+    <button onclick="calculate('2')">2</button>
+    <button onclick="calculate('3')">3</button>
+    <button onclick="calculate('-')">−</button>
+
+    <br>
+
+    <button onclick="calculate('0')">0</button>
+    <button onclick="calculate('.')">.</button>
+    <button onclick="calculate('+')">+</button>
+    <button onclick="showResult()">=</button>
+
+    <br>
+
+    <button onclick="clearCalculator()">Clear</button>
+
+    <script>
+        let calculation = '';
+
+        function calculate(value) {
+            calculation = calculation + value;
+            document.getElementById('display').value = calculation;
+        }
+
+        function showResult() {
+            calculation = eval(calculation);
+            document.getElementById('display').value = calculation;
+        }
+
+        function clearCalculator() {
+            calculation = '';
+            document.getElementById('display').value = '';
+        }
+    </script>
+
+</body>
+</html>
